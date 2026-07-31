@@ -10,7 +10,7 @@ book:
   date: today
   description: |
       A step-by-step tutorial on....
-  repo-url: https://github.com/jdertien/Connectivity_LearningPlatform.git
+  repo-url: https://github.com/jdertien/Connectivity_LearningPlatform
   repo-branch: main
   repo-actions: [edit, issue]
   site-url: https://jdertien.github.io/Connectivity_LearningPlatform/
@@ -21,14 +21,6 @@ book:
     background: light
   chapters:
     - index.qmd
-    - 01-introduction.qmd
-    - 02-installation.qmd
-    - 03-preparing-data.qmd
-    - 04-creating-the-cube.qmd
-    - 05-validating.qmd
-    - 06-uploading.qmd
-    - 07-troubleshooting.qmd
-    - 08-resources.qmd
 
 format:
   html:
