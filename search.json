@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Connectivity Tutorial",
+    "section": "",
+    "text": "Getting ready",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#getting-ready",
+    "href": "index.html#getting-ready",
+    "title": "Connectivity Tutorial",
+    "section": "",
+    "text": "Working alongside this tutorial. Every code chunk runs as-is against the bundled example dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  }
+]
