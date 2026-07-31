@@ -1,1 +1,12 @@
+---
+title: "Overview"
+subtitle: "Tutorial on Connectivity "
+number-sections: false
+---
+
+## Getting ready 
+
+::: {.callout-tip appearance="simple"}
+**Working alongside this tutorial.** Every code chunk runs as-is against the bundled example dataset.
+:::
 
