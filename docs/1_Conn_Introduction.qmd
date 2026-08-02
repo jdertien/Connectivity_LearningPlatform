@@ -1,5 +1,4 @@
 ---
-title: "Introduction"
 author: "Jeremy Dertien"
 format: html
 editor: visual
@@ -11,15 +10,15 @@ This section introduces least-cost path and Circuitscape models, two of the most
 
 In this section you will learn:
 
--   how least-cost path and Circuitscape models operate
--   what general data is needed to use common connectivity models
--   how to perform least-cost path analysis in QGIS and R
--   how to perform Circuitscape analysis in R
--   how to produce simple maps and plots in R
+- how least-cost path and Circuitscape models operate
+- what general data is needed to use common connectivity models
+- how to perform least-cost path analysis in QGIS and R
+- how to perform Circuitscape analysis in R
+- how to produce simple maps and plots in R
 
 As introduced in Section 1.4b, there are numerous different forms of the connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.
 
-```{r}
+```{r eval=TRUE}
 1 + 1
 ```
 

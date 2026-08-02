@@ -21,7 +21,12 @@ book:
     background: light
   chapters:
     - index.qmd
-
+    - 1_Conn_Introduction.qmd
+    - 2_Model_Background.qmd
+    - 3_LCP_QGIS_exercise.qmd
+    - 4_LCP_R_exercise.qmd
+    - 5_Circuit_exercise_qmd
+    - 6_Conclusion.qmd
 format:
   html:
     theme:

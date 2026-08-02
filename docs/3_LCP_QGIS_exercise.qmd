@@ -1,0 +1,6 @@
+---
+title: "Least-cost path QGIS"
+editor: visual
+---
+
+<https://youtu.be/l4WBo6Ntwsw>
