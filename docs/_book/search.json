@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Connectivity Tutorial",
     "section": "",
-    "text": "Getting ready",
+    "text": "Overview\nThis section introduces least-cost path and Circuitscape models, two of the most common connectivity models used in conservation planning and research.\nIn this section you will learn:",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
     ]
@@ -27,6 +27,96 @@
     "text": "This section introduces least-cost path and Circuitscape models, two of the most common connectivity models used in conservation planning and research.\nIn this section you will learn:\n\nhow least-cost path and Circuitscape models operate\nwhat general data is needed to use common connectivity models\nhow to perform least-cost path analysis in QGIS and R\nhow to perform Circuitscape analysis in R\nhow to produce simple maps and plots in R\n\nAs introduced in Section 1.4b, there are numerous different forms of the connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.\n\n1 + 1\n#&gt; [1] 2\n\nSome of the most commonly used models today are those that use a cost or resistance surface to model potential movement pathways either from point A to point B or continuously across the full landscape. Models such as least-cost path, randomized short paths and Circuitscape require the input of start and end nodes (point or polygon), while Omniscape computes movement from every direction. These models have grown in popularity, in part, because of their relative accessibility to modelers and practitioners for management decisions and the spatial data that are created which can communicate connectivity concepts and concerns to stakeholders.\n\n#&gt; [1] 4",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "1_Conn_Introduction.html",
+    "href": "1_Conn_Introduction.html",
+    "title": "\n2  Introduction\n",
+    "section": "",
+    "text": "As introduced in Section 1.4b, there are numerous different forms of the connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.\nSome of the most commonly used models today are those that use a cost or resistance surface to model potential movement pathways either from point A to point B or continuously across the full landscape. Models such as least-cost path, randomized short paths and Circuitscape require the input of start and end nodes (point or polygon), while Omniscape computes movement from every direction. These models have grown in popularity, in part, because of their relative accessibility to modelers and practitioners for management decisions and the spatial data that are created which can communicate connectivity concepts and concerns to stakeholders.\n\n#&gt; [1] 4",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#before-you-start",
+    "href": "index.html#before-you-start",
+    "title": "Connectivity Tutorial",
+    "section": "Before you start",
+    "text": "Before you start\n\n\nNo previous experience is necessary but it helps to be comfortable with:\n\nbasic QGIS: navigating spatial data layers and using tools\nbasic R: installing packages and running scripts\nbasic geospatial data manipulation in R\n\n\n\nKey resources\n\nQGIS — to download the latest stable version of QGIS.\nDownload R\nCircuitscape.jl — full documentation of the Circuitscape package developed for the Julia programming language.\nIUCN Connectivity Guidelines — comprehensive background on connectivity conservation.\nNaturaConnect European Guidelines — guidelines covering connectivity background, methods and planning framework.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "2_Model_Background.html",
+    "href": "2_Model_Background.html",
+    "title": "3  Exercise Background",
+    "section": "",
+    "text": "3.1 Data Inputs\nIn the proceeding exercises we will be examining the application of least-cost path analysis and Circuitscape to model connectivity corridors between a selection of protected areas in the Balkans. We will model the least-cost paths for large predators two different ways using QGIS and R.\nWe will then use Circuitscape in R to model connectivity using an electrical circuit theory approach to show multiple potential routes of movement. From there we can compare how the different model output agrees and differs and what may be best for different applications. To begin we will quickly go over the dataset that will used for the three different model calculations.\nWe can download the data from our Github repository. Our dataset will include polygons and points that represent the protected areas in our study area and a resistance raster for large predators. The name of the file that we will be using is below in italics.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Exercise Background</span>"
+    ]
+  },
+  {
+    "objectID": "3_LCP_QGIS_exercise.html",
+    "href": "3_LCP_QGIS_exercise.html",
+    "title": "4  Least-Cost Path in QGIS",
+    "section": "",
+    "text": "4.1 QGIS Protocol\nWe will produce least-cost paths (LCP) for large predators dispersing from one national park in Montenegro to a more than 20 other protected areas within the region. We provide an introduction to the protocol of operations in QGIS then a video walking you through the full short exercise. These are real scientific data and the LCPs we produce could provide valuable insight for connectivity conservation in the central Balkans.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Least-Cost Path in QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "5_Circuit_exercise.html",
+    "href": "5_Circuit_exercise.html",
+    "title": "6  Circuitscape Exercise in R",
+    "section": "",
+    "text": "#Circuitscape Exercise\nNow that we have seen how to perform least-cost path exercises in QGIS and R, we will move on to operating and understanding circuit-theory models. Where least-cost path models create a single path between a pair of points (e.g. between two protected areas), circuit-theory models, such as Circuitscape, create many potential paths that could be create via “random-walking” simulations. This is likely a more realistic representation of how wildlife interact and move through their environment.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Circuitscape Exercise in R</span>"
+    ]
+  },
+  {
+    "objectID": "2_Model_Background.html#data-inputs",
+    "href": "2_Model_Background.html#data-inputs",
+    "title": "3  Exercise Background",
+    "section": "",
+    "text": "Polygon of protected areas: “PA_balkan_subset.shp”\n\nThis is a subset of protected areas clipped for the study region from the World Database of Protected Area (WDPA) and edited to reduce overlapping polygons.\n\nProtected area centroid points: “PA_balkan_subset_pts2.shp”\n\nCentroids are the centre point of each of the protected area polygons. The centroids are then further divded between places where an animal starts moving from to multiple different end points.\n\nStarting point–“start_pts_mne.shp”\nEnd points–“end_pts_balkans.shp”\n\n\nResistance raster: “balkan_predenergy_resist.tif”\n\nThe resistance surface was generated for large predators using a combination of species distribution models and an energy expenditure model. The SDM quantifies habitat suitability on a 0.0-1.0 scale with 1.0 being the highest/best habitat suitability and 0.0 being the lowest.\nWe then invert the SDM values so that areas with the highest habitat suitability have the lowest resistance to movement. The energy expenditure model quantifies how topography impacts the potential caloric energy used by a large mammal as it moves across the landscape. Very rugged or steep slopes therefore have much higher energy values than flatlands.\nThe resistance data is at a resolution of 1 km x 1km cells. This can be rather coarse and can slightly bias the corridor paths which we will discuss some outside.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Exercise Background</span>"
+    ]
+  },
+  {
+    "objectID": "3_LCP_QGIS_exercise.html#section",
+    "href": "3_LCP_QGIS_exercise.html#section",
+    "title": "4  Least-Cost Path in QGIS",
+    "section": "4.2 ",
+    "text": "4.2 \nThe following video walks through the exercise and discusses important aspects of the results:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Least-Cost Path in QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "4_LCP_R_exercise.html",
+    "href": "4_LCP_R_exercise.html",
+    "title": "\n5  Least-cost Path in Program R\n",
+    "section": "",
+    "text": "5.1 Connectivity Analysis in Program R\nHaving looked at the LCP analysis in QGIS we can now explore connectivity modelling in R which will allow for more options and flexibility. We will rely upon the ‘terra’ package for raster processing and some vector data handling. Connectivity modelling will be handled by the ‘leastcostpath’ package for least-cost path analysis",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Least-cost Path in Program R</span>"
+    ]
+  },
+  {
+    "objectID": "4_LCP_R_exercise.html#least-cost-path-analysis",
+    "href": "4_LCP_R_exercise.html#least-cost-path-analysis",
+    "title": "\n5  Least-cost Path in Program R\n",
+    "section": "\n5.2 Least-cost Path Analysis",
+    "text": "5.2 Least-cost Path Analysis\nWe will use the same data that we used in QGIS, but in R we can choose which pairs we want to make a connection rather than just one start point and multiple end points. First, lets load the necessary packages and data and perform some pre-processing steps. The ‘leastcostpath’ package is relatively new and is an upgrade to the ‘gdistance’ package (which requires the use of the outdated ‘raster’ package).\n\nlibrary(leastcostpath)\nlibrary(terra)\nlibrary(sf)\nlibrary(here)\n\npts = st_read(\"./data/PA_balkan_subset_pts2.shp\")\npolygons = st_read(\"./data/PA_balkan_subset.shp\")\nresist = rast(\"./data/balkan_predenergy_resist.tif\")\n\nLet’s take a quick look at the data in the central Balkans.\n\n\nplot(resist,\n     main = \"Resistance Surface\")\n\nplot(st_geometry(polygons),\n     add = TRUE,\n     border = \"coral3\",\n     col = \"coral\")\n\nplot(st_geometry(pts),\n     add = TRUE,\n     pch = 16,\n     col = \"red\",\n     cex = 0.7)\n\n\n\n\n\n\n\nLet’s choose an origin for the LCP analysis in which to connect to several other nearby protected areas.\n\norigin = pts[107, ]\ndest = c(3, 4, 23, 34, 35, 36, 43, 46, 50, 52, 54, 55, 56, 62, 74, 84, 95)\ndestinations = pts[dest, ]\nplot(resist)\nplot(destinations, add = TRUE, pch = 16, col = \"red\")\n\n\n\n\n\n\n\nAfter we have defined the origin and destinations we need to then calculate a conductance matrix for the calculation of the least-cost paths. The create_cs() function translates the resistance raster into a form that the create_lcp() can use to calculate all the individual least-cost paths. Finally we can plug in this matrix and our different points layers and calculate the paths.\n\ncs_matrix = create_cs(resist, neighbours = 16, max_slope = NULL, exaggeration = FALSE)\n\npaths = create_lcp(cs_matrix, origin, destinations, cost_distance = TRUE)\n\nplot(resist)\n\nplot(st_geometry(polygons),\n     add = TRUE,\n     border = \"coral3\",\n     col = \"coral\")\n\n\nplot(st_geometry(paths),\n     add = TRUE,\n     col = \"blue\",\n     lwd = 2)\n\nplot(st_geometry(origin),\n     add = TRUE,\n     pch = 16,\n     col = \"red\",\n     cex = 1.5)\n\nplot(st_geometry(destinations),\n     add = TRUE,\n     pch = 16,\n     col = \"black\")\n\n\n\n\n\n\n\nAn additional visual that could be helpful for conservation managers is a density raster of the least-cost paths. The leastcostpath package luckily has a function that does just that!\n\ndensity = create_lcp_density(resist, paths)\n\nplot(density)\n\nplot(st_geometry(pts),\n    add = TRUE,\n    border = \"coral3\",\n    col = \"coral\")\n\n\n\n\n\n\n\nThe output is rather faint since the vast amount of the landscape does not have overlapping LCPs. However, some overlapping lines are visible surrounding the first ~50 kilometers from the protected area.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Least-cost Path in Program R</span>"
     ]
   }
 ]

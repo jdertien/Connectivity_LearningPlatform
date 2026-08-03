@@ -1,0 +1,17 @@
+{
+  "hash": "127647aa674730e5bd727ec53bac33cd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nformat: html\neditor: visual\n---\n\n# Introduction\n\nAs introduced in Section 1.4b, there are numerous different forms of the connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.\n\nSome of the most commonly used models today are those that use a cost or resistance surface to model potential movement pathways either from point A to point B or continuously across the full landscape. Models such as least-cost path, randomized short paths and Circuitscape require the input of start and end nodes (point or polygon), while Omniscape computes movement from every direction. These models have grown in popularity, in part, because of their relative accessibility to modelers and practitioners for management decisions and the spatial data that are created which can communicate connectivity concepts and concerns to stakeholders.\n\n\n::: {.cell layout-align=\"center\"}\n\n```\n#> [1] 4\n```\n:::\n\n",
+    "supporting": [
+      "1_Conn_Introduction_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

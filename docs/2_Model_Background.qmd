@@ -1,6 +1,30 @@
 ---
-title: "Connectivity Background"
+format: html
 editor: visual
 ---
 
-#Model Background
+# Exercise Background
+
+In the proceeding exercises we will be examining the application of least-cost path analysis and Circuitscape to model connectivity corridors between a selection of protected areas in the Balkans. We will model the least-cost paths for large predators two different ways using QGIS and R.
+
+We will then use Circuitscape in R to model connectivity using an electrical circuit theory approach to show multiple potential routes of movement. From there we can compare how the different model output agrees and differs and what may be best for different applications. To begin we will quickly go over the dataset that will used for the three different model calculations.
+
+## Data Inputs
+
+We can download the data from our Github repository. Our dataset will include polygons and points that represent the protected areas in our study area and a resistance raster for large predators. The name of the file that we will be using is below in *italics*.
+
+1.  Polygon of protected areas: "*PA_balkan_subset.shp*"
+
+    - This is a subset of protected areas clipped for the study region from the World Database of Protected Area (WDPA) and edited to reduce overlapping polygons.
+
+2.  Protected area centroid points: "*PA_balkan_subset_pts2.shp*"
+
+    - Centroids are the centre point of each of the protected area polygons. The centroids are then further divded between places where an animal starts moving from to multiple different end points.
+      - Starting point--"start_pts_mne.shp"
+      - End points--"end_pts_balkans.shp"
+
+3.  Resistance raster: "*balkan_predenergy_resist.tif*"
+
+    - The resistance surface was generated for large predators using a combination of species distribution models and an energy expenditure model. The SDM quantifies habitat suitability on a 0.0-1.0 scale with 1.0 being the highest/best habitat suitability and 0.0 being the lowest.
+    - We then invert the SDM values so that areas with the highest habitat suitability have the lowest resistance to movement. The energy expenditure model quantifies how topography impacts the potential caloric energy used by a large mammal as it moves across the landscape. Very rugged or steep slopes therefore have much higher energy values than flatlands.
+    - The resistance data is at a resolution of 1 km x 1km cells. This can be rather coarse and can slightly bias the corridor paths which we will discuss some outside.

@@ -4,6 +4,8 @@ editor: visual
 format: html
 ---
 
-#Circuitscape Exercise
+#Circuitscape Exercise \[Under construction!\]
 
 Now that we have seen how to perform least-cost path exercises in QGIS and R, we will move on to operating and understanding circuit-theory models. Where least-cost path models create a single path between a pair of points (e.g. between two protected areas), circuit-theory models, such as Circuitscape, create many potential paths that could be create via "random-walking" simulations. This is likely a more realistic representation of how wildlife interact and move through their environment.
+
+The R library 'circuitscaper' provides an R-native interface to the most recent versions of Circuitscape and Omniscape. These two programs are written in the Julia code language which therefore requires you to [download Julia](https://julialang.org/downloads/) to your computer to run the Circuitscape portion of this exercise.

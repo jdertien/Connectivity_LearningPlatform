@@ -1,5 +1,114 @@
 ---
-title: "Least-cost path in Program R"
+title: "Least-cost Path in Program R"
 format: html
 editor: visual
 ---
+
+## Connectivity Analysis in Program R
+
+Having looked at the LCP analysis in QGIS we can now explore connectivity modelling in R which will allow for more options and flexibility. We will rely upon the 'terra' package for raster processing and some vector data handling. Connectivity modelling will be handled by the 'leastcostpath' package for least-cost path analysis
+
+## Least-cost Path Analysis
+
+We will use the same data that we used in QGIS, but in R we can choose which pairs we want to make a connection rather than just one start point and multiple end points. First, lets load the necessary packages and data and perform some pre-processing steps. The 'leastcostpath' package is relatively new and is an upgrade to the 'gdistance' package (which requires the use of the outdated 'raster' package).
+
+```{r}
+#| message: false
+#| warning: false
+#| output: false
+
+library(leastcostpath)
+library(terra)
+library(sf)
+library(here)
+
+pts = st_read("./data/PA_balkan_subset_pts2.shp")
+polygons = st_read("./data/PA_balkan_subset.shp")
+resist = rast("./data/balkan_predenergy_resist.tif")
+
+
+```
+
+Let's take a quick look at the data in the central Balkans.
+
+```{r}
+
+plot(resist,
+     main = "Resistance Surface")
+
+plot(st_geometry(polygons),
+     add = TRUE,
+     border = "coral3",
+     col = "coral")
+
+plot(st_geometry(pts),
+     add = TRUE,
+     pch = 16,
+     col = "red",
+     cex = 0.7)
+```
+
+Let's choose an origin for the LCP analysis in which to connect to several other nearby protected areas.
+
+```{r}
+origin = pts[107, ]
+dest = c(3, 4, 23, 34, 35, 36, 43, 46, 50, 52, 54, 55, 56, 62, 74, 84, 95)
+destinations = pts[dest, ]
+plot(resist)
+plot(destinations, add = TRUE, pch = 16, col = "red")
+
+```
+
+After we have defined the origin and destinations we need to then calculate a conductance matrix for the calculation of the least-cost paths. The create_cs() function translates the resistance raster into a form that the create_lcp() can use to calculate all the individual least-cost paths. Finally we can plug in this matrix and our different points layers and calculate the paths.
+
+```{r}
+#| message: true
+
+cs_matrix = create_cs(resist, neighbours = 16, max_slope = NULL, exaggeration = FALSE)
+
+paths = create_lcp(cs_matrix, origin, destinations, cost_distance = TRUE)
+
+plot(resist)
+
+plot(st_geometry(polygons),
+     add = TRUE,
+     border = "coral3",
+     col = "coral")
+
+
+plot(st_geometry(paths),
+     add = TRUE,
+     col = "blue",
+     lwd = 2)
+
+plot(st_geometry(origin),
+     add = TRUE,
+     pch = 16,
+     col = "red",
+     cex = 1.5)
+
+plot(st_geometry(destinations),
+     add = TRUE,
+     pch = 16,
+     col = "black")
+```
+
+An additional visual that could be helpful for conservation managers is a density raster of the least-cost paths. The leastcostpath package luckily has a function that does just that!
+
+```{r}
+#| message: true
+
+density = create_lcp_density(resist, paths)
+
+plot(density)
+
+plot(st_geometry(pts),
+    add = TRUE,
+    border = "coral3",
+    col = "coral")
+
+```
+
+The output is rather faint since the vast amount of the landscape does not have overlapping LCPs. However, some overlapping lines are visible surrounding the first ~50 kilometers from the protected area.
+
+

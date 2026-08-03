@@ -9,7 +9,7 @@ book:
       affiliation: "German Centre for Integrative Biodiversity Research (iDiv)"
   date: today
   description: |
-      A step-by-step tutorial on....
+      A step-by-step tutorial on modelling least-cost path and Circuitscape models for regional connectivity assessments. 
   repo-url: https://github.com/jdertien/Connectivity_LearningPlatform
   repo-branch: main
   repo-actions: [edit, issue]
@@ -25,7 +25,7 @@ book:
     - 2_Model_Background.qmd
     - 3_LCP_QGIS_exercise.qmd
     - 4_LCP_R_exercise.qmd
-    - 5_Circuit_exercise_qmd
+    - 5_Circuit_exercise.qmd
     - 6_Conclusion.qmd
 format:
   html:

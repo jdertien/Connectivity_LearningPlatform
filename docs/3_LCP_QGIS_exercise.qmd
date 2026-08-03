@@ -1,6 +1,15 @@
 ---
-title: "Least-cost path QGIS"
+title: "Least-Cost Path in QGIS"
 editor: visual
 ---
 
-<https://youtu.be/l4WBo6Ntwsw>
+## QGIS Protocol
+
+We will produce least-cost paths (LCP) for large predators dispersing from one national park in Montenegro to a more than 20 other protected areas within the region. We provide an introduction to the protocol of operations in QGIS then a video walking you through the full short exercise. These are real scientific data and the LCPs we produce could provide valuable insight for connectivity conservation in the central Balkans.
+
+1.  
+
+## 
+The following video walks through the exercise and discusses important aspects of the results:
+
+{{< video https://www.youtube.com/embed/l4WBo6Ntwsw >}}

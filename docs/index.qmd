@@ -4,11 +4,40 @@ subtitle: "Tutorial on Connectivity "
 number-sections: false
 ---
 
-## Overview
+# Overview {.unumbered}
+
+This section introduces least-cost path and Circuitscape models, two of the most common connectivity models used in conservation planning and research.
+
+In this section you will learn:
+
+- how least-cost path and Circuitscape models operate
+- what general data is needed to use common connectivity models
+- how to perform least-cost path analysis in QGIS and R
+- how to perform Circuitscape analysis in R
+- how to produce simple maps and plots in R
 
 
+## Before you start
 
-::: {.callout-tip appearance = "simple"}
-**Working alongside this tutorial.** Every code chunk runs as-is against the bundled example dataset.
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+No previous experience is necessary but it helps to be comfortable with:
+
+-   basic QGIS: navigating spatial data layers and using tools
+-   basic R: installing packages and running scripts
+-   basic geospatial data manipulation in R
+
 :::
 
+::: {.g-col-12 .g-col-md-6}
+**Key resources**
+
+-   [QGIS](https://www.qgis.org/download/) — to download the latest stable version of QGIS.
+-   [Download R](https://cran.r-project.org/bin/windows/base/)
+-   [Circuitscape.jl](https://docs.circuitscape.org/Circuitscape.jl/latest/) — full documentation of the Circuitscape package developed for the Julia programming language.
+-   [IUCN Connectivity Guidelines](https://portals.iucn.org/library/node/49061) — comprehensive background on connectivity conservation.
+-   [NaturaConnect European Guidelines](https://https://preprints.arphahub.com/article/129021/) — guidelines covering connectivity background, methods and planning framework.
+:::
+
+:::
