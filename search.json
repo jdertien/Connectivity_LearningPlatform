@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Connectivity Tutorial",
+    "title": "Connecting Landscapes: A Practical Tutorial for Ecological Connectivity Modelling",
     "section": "",
     "text": "Overview\nThis section introduces least-cost path and Circuitscape models, two of the most common connectivity models used in conservation planning and research.\nIn this section you will learn:",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#before-you-start",
     "href": "index.html#before-you-start",
-    "title": "Connectivity Tutorial",
+    "title": "Connecting Landscapes: A Practical Tutorial for Ecological Connectivity Modelling",
     "section": "Before you start",
     "text": "Before you start\n\n\nNo previous experience is necessary but it helps to be comfortable with:\n\nbasic QGIS: navigating spatial data layers and using tools\nbasic R: installing packages and running scripts\nbasic geospatial data manipulation in R\n\n\n\nKey resources\n\nQGIS — to download the latest stable version of QGIS.\nDownload R\nCircuitscape.jl — full documentation of the Circuitscape package developed for the Julia programming language.\nIUCN Connectivity Guidelines — comprehensive background on connectivity conservation.\nNaturaConnect European Guidelines — guidelines covering connectivity background, methods and planning framework.",
     "crumbs": [
