@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Connectivity Tutorial",
+    "title": "Connecting Landscapes: A Practical Tutorial for Ecological Connectivity Modelling",
     "section": "",
     "text": "Overview\nThis section introduces least-cost path and Circuitscape models, two of the most common connectivity models used in conservation planning and research.\nIn this section you will learn:",
     "crumbs": [
@@ -32,9 +32,9 @@
   {
     "objectID": "1_Conn_Introduction.html",
     "href": "1_Conn_Introduction.html",
-    "title": "\n2  Introduction\n",
+    "title": "2  Introduction",
     "section": "",
-    "text": "As introduced in Section 1.4b, there are numerous different forms of the connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.\nSome of the most commonly used models today are those that use a cost or resistance surface to model potential movement pathways either from point A to point B or continuously across the full landscape. Models such as least-cost path, randomized short paths and Circuitscape require the input of start and end nodes (point or polygon), while Omniscape computes movement from every direction. These models have grown in popularity, in part, because of their relative accessibility to modelers and practitioners for management decisions and the spatial data that are created which can communicate connectivity concepts and concerns to stakeholders.\n\n#&gt; [1] 4",
+    "text": "As introduced in Section 1.4b, there are numerous forms of connectivity models from the purely functional models using GPS tracking data of animals to structural metrics that quantify the spatial arrangement of different land cover patches. Access to these different models is spread across several different software packages with varying levels of interactive interface. Most exist as package libraries in R and/or Python. Others such as least-cost path models and the Linkage Mapper tool suite are available on interactive GIS platforms like ArcGIS or QGIS.\nSome of the most commonly used models today are those that use a cost or resistance surface to model potential movement pathways either from point A to point B or continuously across the full landscape. Models such as\n\nleast-cost path\nrandomized shortest paths\nresistant kernels\nCircuitscape and Omniscape\n\nuse a resistance raster. While most, including least-cost path and Cricuitscape, require the input of at least one start and end node (points or polygons), Omniscape computes movement from every direction. These models have grown in popularity, in part, because of their relative accessibility to modelers and practitioners for management decisions and the spatial data that are created which can communicate connectivity concepts and concerns to stakeholders.\nThis slide show provides some additional background on the purpose and functioning of connectivity models:",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#before-you-start",
     "href": "index.html#before-you-start",
-    "title": "Connectivity Tutorial",
+    "title": "Connecting Landscapes: A Practical Tutorial for Ecological Connectivity Modelling",
     "section": "Before you start",
     "text": "Before you start\n\n\nNo previous experience is necessary but it helps to be comfortable with:\n\nbasic QGIS: navigating spatial data layers and using tools\nbasic R: installing packages and running scripts\nbasic geospatial data manipulation in R\n\n\n\nKey resources\n\nQGIS — to download the latest stable version of QGIS.\nDownload R\nCircuitscape.jl — full documentation of the Circuitscape package developed for the Julia programming language.\nIUCN Connectivity Guidelines — comprehensive background on connectivity conservation.\nNaturaConnect European Guidelines — guidelines covering connectivity background, methods and planning framework.",
     "crumbs": [

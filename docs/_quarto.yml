@@ -3,13 +3,11 @@ project:
   output-dir: _book
 
 book:
-  title: "Connectivity Tutorial"
+  title: "Connecting Landscapes: A Practical Tutorial for Ecological Connectivity Modelling"
   author:
-    - name: "Jeremy Dertien "
-      affiliation: "German Centre for Integrative Biodiversity Research (iDiv)"
+    - name: "Jeremy Dertien, Emmanuel Oceguera-Conchas "
+      affiliation: "German Centre for Integrative Biodiversity Research (iDiv) ![](images/idiv-logo.png){width=22px style=\"vertical-align:text-bottom; margin-left:.4em\"} ![](images/NClogo.png){height=22px style=\"vertical-align:text-bottom; margin-left:.5em\"}"
   date: today
-  description: |
-      A step-by-step tutorial on modelling least-cost path and Circuitscape models for regional connectivity assessments. 
   repo-url: https://github.com/jdertien/Connectivity_LearningPlatform
   repo-branch: main
   repo-actions: [edit, issue]
@@ -19,6 +17,20 @@ book:
   sidebar:
     style: docked
     background: light
+  page-footer:
+    left:  |
+      [![](images/NClogo.png){height=50px fig-alt="NaturaConnect"}](https://naturaconnect.eu/)
+    
+    right: |
+      :::: {style="max-width:360px; margin-left:auto; text-align:left"}
+      ![](images/eu.png){height=52px fig-alt="Funded by the European Union"}
+
+      ::: {style="color:#003399; text-align:justify; font-size:.8rem; margin-top:.6em"}
+      NaturaConnect receives funding under the European Union's Horizon Europe
+      research and innovation programme under grant agreement number 101060429.
+      :::
+      ::::
+    border: true
   chapters:
     - index.qmd
     - 1_Conn_Introduction.qmd

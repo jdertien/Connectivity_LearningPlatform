@@ -1,7 +1,9 @@
 ---
 title: "Overview"
-subtitle: "Tutorial on Connectivity "
+subtitle: "Using least-cost paths and Circuitscape for conservation planning"
 number-sections: false
+toc: false
+page-layout: full
 ---
 
 # Overview {.unumbered}

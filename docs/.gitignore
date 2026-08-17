@@ -1,2 +1,13 @@
 /.quarto/
 **/*.quarto_ipynb
+/_book/
+/_freeze/
+*_cache/
+*_files/
+.Rhistory
+.RData
+
+# Windows cruft
+Thumbs.db
+ehthumbs.db
+desktop.ini
