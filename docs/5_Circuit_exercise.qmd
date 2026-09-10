@@ -18,7 +18,7 @@ library(circuitscaper)
 library(terra)
 library(sf)
 
-resist = rast("balkan_predenergy_resist.tif")
+resist = rast("./data/balkan_predenergy_resist.tif")
 
 pts = st_read("./data/PA_balkan_subset_pts2.shp")
 
