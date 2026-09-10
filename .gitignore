@@ -9,3 +9,4 @@ _output/
 *.quarto_ipynb
 .Rhistory
 .RData
+.Rproj.user

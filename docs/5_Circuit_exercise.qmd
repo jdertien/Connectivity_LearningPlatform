@@ -1,11 +1,142 @@
 ---
 title: "Circuitscape Exercise in R"
-editor: visual
 format: html
+editor: visual
 ---
 
-#Circuitscape Exercise \[Under construction!\]
+## Circuitscape Analysis \[Under construction!\]
 
 Now that we have seen how to perform least-cost path exercises in QGIS and R, we will move on to operating and understanding circuit-theory models. Where least-cost path models create a single path between a pair of points (e.g. between two protected areas), circuit-theory models, such as Circuitscape, create many potential paths that could be create via "random-walking" simulations. This is likely a more realistic representation of how wildlife interact and move through their environment.
 
-The R library 'circuitscaper' provides an R-native interface to the most recent versions of Circuitscape and Omniscape. These two programs are written in the Julia code language which therefore requires you to [download Julia](https://julialang.org/downloads/) to your computer to run the Circuitscape portion of this exercise.
+The R library 'circuitscaper' provides an R-native interface to the most recent versions of Circuitscape and Omniscape. These two programs are written in the Julia code language therefore you will first need to download Julia using the 'circuitscaper' function cs_install_julia() or if you prefer [download Julia](https://julialang.org/downloads/) directly from the code language's official website. We will get started just like in the least-cost path analysis by loading in and sub-setting our data.
+
+```{r}
+
+#As with all R packages, you will initially need to use install.packages("circuitscaper") in order to install the package on your computer. 
+
+library(circuitscaper)
+library(terra)
+library(sf)
+
+resist = rast("balkan_predenergy_resist.tif")
+
+pts = st_read("./data/PA_balkan_subset_pts2.shp")
+
+
+#Subset the data for the same nodes as the least-cost path analysis
+origin = pts[107, ]
+destinations = pts[c(3, 4, 23, 34, 35, 36, 43, 46, 50, 52, 54, 55, 56, 62, 74, 84, 95), ]
+
+focal_pts = rbind(origin, destinations)
+
+plot(resist)
+
+plot(st_geometry(focal_pts),
+     add = TRUE, 
+     pch = 16,
+     col = "red")
+```
+
+Running this next function will download Julia and Circuitscape to your computer, therefore, it **may not be necessary** if you have already downloaded these programs onto your computer.
+
+```{r}
+# This will download Julia and the latest versions of Circuitscape.jl and Omniscape.jl
+cs_install_julia()
+
+```
+
+Later, if you are having issues with R finding Julia or Circuitscape, it may be necessary to use the **cs_setup()** function to explicitly control the file path of Julia on your computer.
+
+Similar to the least-cost path exercise in R, we will subset the points data to one origin point and multiple destination connections.
+
+```{r}
+#Subset the data for the same nodes as the least-cost path analysis
+origin = pts[107, ]
+destinations = pts[c(3, 4, 23, 34, 35, 36, 43, 46, 50, 52, 54, 55, 56, 62, 74, 84, 95), ]
+
+focal_pts = rbind(origin, destinations)
+
+plot(resist)
+
+plot(st_geometry(focal_pts),
+     add = TRUE, 
+     pch = 16,
+     col = "red")
+```
+
+### Running Circuitscape
+
+We will convert the points into coordinates since 'circuitscaper' accepts a two-column matrix or data frame of x/y coordinates and internally converts those locations to focal node raster cells. Then we run Circuitscape from our one origin point (protected area) to all our destination points. It is useful to first run **?cs_one_to_all()** to see the defaults of all the parameters running in the Circuitscape call.
+
+```{r}
+coords = st_coordinates(focal_pts)
+
+coords
+
+#Currently the analysis is only saving the cumulative of all the pair-to-pair current density calculations. 
+#If you want to save each pair's directional connectivity calculation change cumulative_only = FALSE .
+
+cs_result = cs_one_to_all(
+  resistance = resist,
+  locations = coords,
+  resistance_is = "resistances",
+  cumulative_only = TRUE
+)
+
+#Check out the cumulative current results and then plot the data
+cs_result$cumulative_current
+
+plot(
+  cs_result$cumulative_current,
+  main = "Cumulative Current Density"
+)
+
+plot(
+  st_geometry(focal_pts),
+  add = TRUE,
+  pch = 16,
+  col = "red"
+)
+```
+
+Higher values identify areas that are receiving more current across between and within protected areas in your network. Ecologically this can indicate the more important areas for wildlife movement or where connectivity corridors are being highly compressed and possibly under threat from being cutoff.
+
+We can identify potential hotspots for connectivity by isolating the highest percentile values of current density.
+
+```{r}
+current = cs_result$cumulative_current
+
+vals = values(current, mat = FALSE)
+
+vals = vals[is.finite(vals) & vals > 0]
+
+#This will identify the top 10% value threshold
+threshold_90 = quantile(
+  vals,
+  probs = 0.90,
+  na.rm = TRUE
+)
+
+threshold_90
+
+hotspots10 = current >= threshold_90
+
+plot(hotspots10,
+  main = "Top 10% Current-Density Hotspots"
+)
+
+plot(st_geometry(focal_pts),
+  add = TRUE,
+  pch = 16,
+  col = "red"
+)
+
+```
+
+Isolating other threshold values is rather simple. If you want to identify the top 5% or top 25% just change the threshold_90 object, respectively:
+
+threshold_95 = quantile(vals, 0.95)
+
+threshold_75 = quantile(vals, 0.75)
+
+These different rasters can be overlaid in one plot to easily see transitions in the hotspot areas.

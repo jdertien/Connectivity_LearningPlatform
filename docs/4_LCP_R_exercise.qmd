@@ -20,7 +20,6 @@ We will use the same data that we used in QGIS, but in R we can choose which pai
 library(leastcostpath)
 library(terra)
 library(sf)
-library(here)
 
 pts = st_read("./data/PA_balkan_subset_pts2.shp")
 polygons = st_read("./data/PA_balkan_subset.shp")
@@ -109,6 +108,4 @@ plot(st_geometry(pts),
 
 ```
 
-The output is rather faint since the vast amount of the landscape does not have overlapping LCPs. However, some overlapping lines are visible surrounding the first ~50 kilometers from the protected area.
-
-
+The output is rather faint since the vast amount of the landscape does not have overlapping LCPs. However, some overlapping lines are visible surrounding the first \~50 kilometers from the protected area.
