@@ -51,6 +51,8 @@ jobs:
             any::terra
             any::tidyterra
             any::sf
+            any::leastcostpath
+            any::circuitscaper
         
       - name: Render and publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
