@@ -53,7 +53,17 @@ jobs:
             any::sf
             any::leastcostpath
             any::circuitscaper
+            any::JuliaCall
         
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.11'
+        
+      - name: Install Julia dependencies
+        run:
+          julia -e 'using Pkg; Pkg.add(["Suppressor", "RCall", "Circuitscape"]); Pkg.precompile()'
+          
       - name: Render and publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
