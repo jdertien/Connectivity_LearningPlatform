@@ -29,40 +29,6 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: "1.5.56"
-
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: "release"
-          use-public-rspm: true
-
-      - name: Install system dependencies (Linux)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libhdf5-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev
-
-      - name: Install R package dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            any::knitr
-            any::rmarkdown
-            any::ggplot2
-            any::terra
-            any::tidyterra
-            any::sf
-            any::leastcostpath
-            any::circuitscaper
-            any::JuliaCall
-        
-      - name: Set up Julia
-        uses: julia-actions/setup-julia@v2
-        with:
-          version: '1.11'
-        
-      - name: Install Julia dependencies
-        run:
-          julia -e 'using Pkg; Pkg.add(["Suppressor", "RCall", "Circuitscape"]); Pkg.precompile()'
           
       - name: Render and publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
