@@ -42,7 +42,7 @@ Running this next function will download Julia and Circuitscape to your computer
 ```{r}
 #| eval: false
 # This will download Julia and the latest versions of Circuitscape.jl and Omniscape.jl
-cs_install_julia()
+cs_install_julia(version = "latest")
 
 ```
 
