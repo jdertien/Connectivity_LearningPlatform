@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#circuitscape-analysis-under-construction" id="toc-circuitscape-analysis-under-construction" class="nav-link active" data-scroll-target="#circuitscape-analysis-under-construction"><span class="header-section-number">6.1</span> Circuitscape Analysis [Under construction!]</a>
+  <li><a href="#circuitscape-analysis" id="toc-circuitscape-analysis" class="nav-link active" data-scroll-target="#circuitscape-analysis"><span class="header-section-number">6.1</span> Circuitscape Analysis</a>
   <ul class="collapse">
   <li><a href="#running-circuitscape" id="toc-running-circuitscape" class="nav-link" data-scroll-target="#running-circuitscape"><span class="header-section-number">6.1.1</span> Running Circuitscape</a></li>
   </ul></li>
@@ -230,8 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="circuitscape-analysis-under-construction" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="circuitscape-analysis-under-construction"><span class="header-section-number">6.1</span> Circuitscape Analysis [Under construction!]</h2>
+<section id="circuitscape-analysis" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="circuitscape-analysis"><span class="header-section-number">6.1</span> Circuitscape Analysis</h2>
 <p>Now that we have seen how to perform least-cost path exercises in QGIS and R, we will move on to operating and understanding circuit-theory models. Where least-cost path models create a single path between a pair of points (e.g.&nbsp;between two protected areas), circuit-theory models, such as Circuitscape, create many potential paths that could be create via “random-walking” simulations. This is likely a more realistic representation of how wildlife interact and move through their environment.</p>
 <p>The R library ‘circuitscaper’ provides an R-native interface to the most recent versions of Circuitscape and Omniscape. These two programs are written in the Julia code language therefore you will first need to download Julia using the ‘circuitscaper’ function cs_install_julia() or if you prefer <a href="https://julialang.org/downloads/">download Julia</a> directly from the code language’s official website. We will get started just like in the least-cost path analysis by loading in and sub-setting our data.</p>
 <div class="cell" data-layout-align="center">
@@ -1016,7 +1016,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
